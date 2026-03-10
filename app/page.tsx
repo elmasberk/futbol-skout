@@ -38,7 +38,7 @@ export default function Home() {
   const aramaTakimlari = useMemo(() => {
     if (aramaMetni.length < 2) return []
     const k = aramaMetni.toLowerCase()
-    const takimlar = [...new Set(tumOyuncular.map(p => p.takim))]
+    const takimlar = Array.from(new Set(tumOyuncular.map(p => p.takim)))
     return takimlar.filter(t => t.toLowerCase().includes(k)).slice(0, 4)
   }, [aramaMetni])
 
