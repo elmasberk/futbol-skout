@@ -6,15 +6,19 @@ top5-players.csv → data/players.json dönüştürücü
 import csv
 import json
 import os
+from collections import Counter
 
 CSV_DOSYA = os.path.join(os.path.dirname(__file__), "top5-players.csv")
 CIKTI = os.path.join(os.path.dirname(__file__), "..", "data", "players.json")
 
+DF_DONGU = ["CB", "CB", "LB", "RB"]
+FW_DONGU = ["ST", "ST", "LW", "RW"]
+
 POZISYON_MAP = {
     "GK": "GK",
-    "DF": "CB", "DF,MF": "CDM", "DF,FW": "LB",
+    "DF,MF": "CDM", "DF,FW": "LB",
     "MF": "CM", "MF,DF": "CDM", "MF,FW": "CAM",
-    "FW": "ST", "FW,MF": "RW", "FW,DF": "ST",
+    "FW,MF": "CAM", "FW,DF": "RW",
 }
 
 LIG_MAP = {
@@ -43,51 +47,53 @@ def avatar(isim, poz):
     return f"https://api.dicebear.com/7.x/initials/svg?seed={seed}&backgroundColor={renk}"
 
 def ulke_temizle(nation):
-    # "eng ENG" → "İngiltere" gibi çevir
     ulke_map = {
         "ENG": "İngiltere", "ESP": "İspanya", "GER": "Almanya",
         "FRA": "Fransa", "ITA": "İtalya", "BRA": "Brezilya",
         "ARG": "Arjantin", "POR": "Portekiz", "NED": "Hollanda",
         "BEL": "Belçika", "NOR": "Norveç", "SWE": "İsveç",
-        "DEN": "Danimarka", "SUI": "İsviçre", "AUT": "Avusturya",
-        "POL": "Polonya", "CRO": "Hırvatistan", "SEN": "Senegal",
-        "CIV": "Fildişi Sahili", "CMR": "Kamerun", "MAR": "Fas",
-        "URU": "Uruguay", "COL": "Kolombiya", "MEX": "Meksika",
-        "USA": "ABD", "TUR": "Türkiye", "GRE": "Yunanistan",
+        "DEN": "Danimarka", "SUI": "İsviçre", "TUR": "Türkiye",
+        "COL": "Kolombiya", "ARG": "Arjantin", "URU": "Uruguay",
+        "SEN": "Senegal", "MAR": "Fas", "CMR": "Kamerun",
         "SCO": "İskoçya", "WAL": "Galler", "IRL": "İrlanda",
     }
-    parcalar = nation.strip().split()
-    for p in parcalar:
+    for p in nation.strip().split():
         if p.upper() in ulke_map:
             return ulke_map[p.upper()]
     return nation.strip()
 
 oyuncular = []
+df_sayac = 0
+fw_sayac = 0
+
 with open(CSV_DOSYA, encoding="utf-8") as f:
     reader = csv.DictReader(f)
     for i, row in enumerate(reader):
-        pos_raw = row.get("Pos", "MF").split(",")[0]
-        poz = POZISYON_MAP.get(row.get("Pos", "MF"), POZISYON_MAP.get(pos_raw, "CM"))
-        
+        pos_raw = row.get("Pos", "MF")
+
+        if pos_raw in POZISYON_MAP:
+            poz = POZISYON_MAP[pos_raw]
+        elif pos_raw == "DF":
+            poz = DF_DONGU[df_sayac % len(DF_DONGU)]
+            df_sayac += 1
+        elif pos_raw == "FW":
+            poz = FW_DONGU[fw_sayac % len(FW_DONGU)]
+            fw_sayac += 1
+        else:
+            poz = "CM"
+
         mac = temizle(row.get("MP", 0), int)
         if mac < 5:
-            continue  # Az oynayan oyuncuları atla
+            continue
 
         isim = row.get("Player", f"Oyuncu {i}")
-        lig_raw = row.get("Comp", "")
-        lig = LIG_MAP.get(lig_raw, lig_raw)
-
-        # Pas başarısı CSV'de yok, xG bazlı tahmin
+        lig = LIG_MAP.get(row.get("Comp", ""), row.get("Comp", ""))
         pas_tahmini = min(95, max(55, 75 + temizle(row.get("PrgP", 0)) * 0.3))
-        # Dribling: PrgC (progressive carries) bazlı
         dribling = min(95, max(30, 40 + temizle(row.get("PrgC", 0)) * 0.5))
-        # Top kazanma tahmini
         top_kazanma = min(80, max(10, 20 + temizle(row.get("PrgP", 0)) * 0.2))
+        yas = temizle(str(row.get("Age", "25")).split("-")[0], int, 25)
 
-        yas_raw = str(row.get("Age", "25"))
-        yas = temizle(yas_raw.split("-")[0], int, 25)
-
-        oyuncu = {
+        oyuncular.append({
             "id": i + 1,
             "isim": isim,
             "takim": row.get("Squad", "Bilinmiyor"),
@@ -109,11 +115,14 @@ with open(CSV_DOSYA, encoding="utf-8") as f:
             "transferDegeri": 0,
             "sozlesmeBitis": 2026,
             "resim": avatar(isim, poz),
-        }
-        oyuncular.append(oyuncu)
+        })
 
 cikti_yolu = os.path.normpath(CIKTI)
 with open(cikti_yolu, "w", encoding="utf-8") as f:
     json.dump(oyuncular, f, ensure_ascii=False, indent=2)
 
-print(f"✅ {len(oyuncular)} oyuncu → {cikti_yolu}")
+poz_dagilim = Counter(o["pozisyon"] for o in oyuncular)
+print(f"\n✅ {len(oyuncular)} oyuncu → {cikti_yolu}")
+print("\nPozisyon dağılımı:")
+for poz, sayi in sorted(poz_dagilim.items()):
+    print(f"  {poz}: {sayi}")
