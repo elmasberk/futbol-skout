@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1, "isim": "Erling Haaland", "takim": "Manchester City", "lig": "Premier Lig",
+    "pozisyon": "ST", "yas": 23, "uyruk": "Norveç",
+    "gol": 27, "asist": 5, "mac": 31, "dakika": 2580,
+    "pasBasarisi": 68, "dribling": 58, "topKazanma": 22, "havaTopu": 72,
+    "sutsayisi": 112, "sariKart": 1, "kirmKart": 0,
+    "transferDegeri": 180, "sozlesmeBitis": 2026,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=EH&backgroundColor=22c55e"
+  },
+  {
+    "id": 2, "isim": "Harry Kane", "takim": "Bayern Münih", "lig": "Bundesliga",
+    "pozisyon": "ST", "yas": 30, "uyruk": "İngiltere",
+    "gol": 36, "asist": 8, "mac": 34, "dakika": 3060,
+    "pasBasarisi": 76, "dribling": 62, "topKazanma": 28, "havaTopu": 68,
+    "sutsayisi": 128, "sariKart": 2, "kirmKart": 0,
+    "transferDegeri": 100, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=HK&backgroundColor=22c55e"
+  },
+  {
+    "id": 3, "isim": "Viktor Gyökeres", "takim": "Sporting CP", "lig": "Primeira Liga",
+    "pozisyon": "ST", "yas": 25, "uyruk": "İsveç",
+    "gol": 43, "asist": 13, "mac": 46, "dakika": 3824,
+    "pasBasarisi": 71, "dribling": 74, "topKazanma": 38, "havaTopu": 65,
+    "sutsayisi": 156, "sariKart": 4, "kirmKart": 0,
+    "transferDegeri": 90, "sozlesmeBitis": 2026,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=VG&backgroundColor=22c55e"
+  },
+  {
+    "id": 4, "isim": "Lautaro Martínez", "takim": "Inter Milan", "lig": "Serie A",
+    "pozisyon": "ST", "yas": 26, "uyruk": "Arjantin",
+    "gol": 24, "asist": 6, "mac": 34, "dakika": 2890,
+    "pasBasarisi": 73, "dribling": 71, "topKazanma": 31, "havaTopu": 61,
+    "sutsayisi": 98, "sariKart": 5, "kirmKart": 0,
+    "transferDegeri": 110, "sozlesmeBitis": 2028,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=LM&backgroundColor=22c55e"
+  },
+  {
+    "id": 5, "isim": "Kylian Mbappé", "takim": "Real Madrid", "lig": "La Liga",
+    "pozisyon": "ST", "yas": 25, "uyruk": "Fransa",
+    "gol": 31, "asist": 7, "mac": 35, "dakika": 2940,
+    "pasBasarisi": 80, "dribling": 91, "topKazanma": 34, "havaTopu": 48,
+    "sutsayisi": 134, "sariKart": 2, "kirmKart": 0,
+    "transferDegeri": 180, "sozlesmeBitis": 2029,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=KM&backgroundColor=22c55e"
+  },
+  {
+    "id": 6, "isim": "Duván Zapata", "takim": "Torino", "lig": "Serie A",
+    "pozisyon": "ST", "yas": 32, "uyruk": "Kolombiya",
+    "gol": 10, "asist": 2, "mac": 14, "dakika": 1050,
+    "pasBasarisi": 65, "dribling": 55, "topKazanma": 20, "havaTopu": 78,
+    "sutsayisi": 42, "sariKart": 1, "kirmKart": 0,
+    "transferDegeri": 8, "sozlesmeBitis": 2025,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=DZ&backgroundColor=22c55e"
+  },
+  {
+    "id": 7, "isim": "Jonathan David", "takim": "Lille", "lig": "Ligue 1",
+    "pozisyon": "ST", "yas": 24, "uyruk": "Kanada",
+    "gol": 26, "asist": 4, "mac": 35, "dakika": 2940,
+    "pasBasarisi": 72, "dribling": 68, "topKazanma": 26, "havaTopu": 55,
+    "sutsayisi": 108, "sariKart": 3, "kirmKart": 0,
+    "transferDegeri": 60, "sozlesmeBitis": 2025,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=JD&backgroundColor=22c55e"
+  },
+  {
+    "id": 8, "isim": "Serhou Guirassy", "takim": "Borussia Dortmund", "lig": "Bundesliga",
+    "pozisyon": "ST", "yas": 28, "uyruk": "Gine",
+    "gol": 18, "asist": 3, "mac": 29, "dakika": 2320,
+    "pasBasarisi": 67, "dribling": 60, "topKazanma": 24, "havaTopu": 70,
+    "sutsayisi": 82, "sariKart": 2, "kirmKart": 0,
+    "transferDegeri": 45, "sozlesmeBitis": 2028,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=SG&backgroundColor=22c55e"
+  },
+  {
+    "id": 9, "isim": "Vinicius Jr.", "takim": "Real Madrid", "lig": "La Liga",
+    "pozisyon": "LW", "yas": 23, "uyruk": "Brezilya",
+    "gol": 24, "asist": 11, "mac": 36, "dakika": 2880,
+    "pasBasarisi": 77, "dribling": 93, "topKazanma": 38, "havaTopu": 42,
+    "sutsayisi": 96, "sariKart": 6, "kirmKart": 0,
+    "transferDegeri": 200, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=VJ&backgroundColor=3b82f6"
+  },
+  {
+    "id": 10, "isim": "Phil Foden", "takim": "Manchester City", "lig": "Premier Lig",
+    "pozisyon": "LW", "yas": 23, "uyruk": "İngiltere",
+    "gol": 19, "asist": 8, "mac": 35, "dakika": 2730,
+    "pasBasarisi": 85, "dribling": 84, "topKazanma": 32, "havaTopu": 38,
+    "sutsayisi": 88, "sariKart": 2, "kirmKart": 0,
+    "transferDegeri": 150, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=PF&backgroundColor=3b82f6"
+  },
+  {
+    "id": 11, "isim": "Leroy Sané", "takim": "Bayern Münih", "lig": "Bundesliga",
+    "pozisyon": "LW", "yas": 28, "uyruk": "Almanya",
+    "gol": 11, "asist": 9, "mac": 28, "dakika": 1980,
+    "pasBasarisi": 82, "dribling": 86, "topKazanma": 30, "havaTopu": 36,
+    "sutsayisi": 62, "sariKart": 1, "kirmKart": 0,
+    "transferDegeri": 60, "sozlesmeBitis": 2025,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=LS&backgroundColor=3b82f6"
+  },
+  {
+    "id": 12, "isim": "Rafael Leão", "takim": "AC Milan", "lig": "Serie A",
+    "pozisyon": "LW", "yas": 24, "uyruk": "Portekiz",
+    "gol": 12, "asist": 10, "mac": 31, "dakika": 2480,
+    "pasBasarisi": 78, "dribling": 88, "topKazanma": 28, "havaTopu": 40,
+    "sutsayisi": 72, "sariKart": 3, "kirmKart": 0,
+    "transferDegeri": 90, "sozlesmeBitis": 2028,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=RL&backgroundColor=3b82f6"
+  },
+  {
+    "id": 13, "isim": "Bukayo Saka", "takim": "Arsenal", "lig": "Premier Lig",
+    "pozisyon": "RW", "yas": 22, "uyruk": "İngiltere",
+    "gol": 16, "asist": 9, "mac": 35, "dakika": 2940,
+    "pasBasarisi": 83, "dribling": 82, "topKazanma": 40, "havaTopu": 36,
+    "sutsayisi": 78, "sariKart": 4, "kirmKart": 0,
+    "transferDegeri": 150, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=BS&backgroundColor=f97316"
+  },
+  {
+    "id": 14, "isim": "Federico Chiesa", "takim": "Liverpool", "lig": "Premier Lig",
+    "pozisyon": "RW", "yas": 26, "uyruk": "İtalya",
+    "gol": 6, "asist": 4, "mac": 18, "dakika": 820,
+    "pasBasarisi": 78, "dribling": 79, "topKazanma": 22, "havaTopu": 38,
+    "sutsayisi": 34, "sariKart": 1, "kirmKart": 0,
+    "transferDegeri": 40, "sozlesmeBitis": 2028,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=FC&backgroundColor=f97316"
+  },
+  {
+    "id": 15, "isim": "Rodrygo Goes", "takim": "Real Madrid", "lig": "La Liga",
+    "pozisyon": "RW", "yas": 23, "uyruk": "Brezilya",
+    "gol": 14, "asist": 8, "mac": 36, "dakika": 2520,
+    "pasBasarisi": 82, "dribling": 83, "topKazanma": 34, "havaTopu": 40,
+    "sutsayisi": 66, "sariKart": 2, "kirmKart": 0,
+    "transferDegeri": 100, "sozlesmeBitis": 2028,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=RG&backgroundColor=f97316"
+  },
+  {
+    "id": 16, "isim": "Jude Bellingham", "takim": "Real Madrid", "lig": "La Liga",
+    "pozisyon": "CAM", "yas": 20, "uyruk": "İngiltere",
+    "gol": 23, "asist": 13, "mac": 35, "dakika": 2940,
+    "pasBasarisi": 88, "dribling": 80, "topKazanma": 52, "havaTopu": 58,
+    "sutsayisi": 94, "sariKart": 5, "kirmKart": 0,
+    "transferDegeri": 180, "sozlesmeBitis": 2029,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=JB&backgroundColor=8b5cf6"
+  },
+  {
+    "id": 17, "isim": "Florian Wirtz", "takim": "Bayer Leverkusen", "lig": "Bundesliga",
+    "pozisyon": "CAM", "yas": 20, "uyruk": "Almanya",
+    "gol": 18, "asist": 20, "mac": 40, "dakika": 3240,
+    "pasBasarisi": 87, "dribling": 86, "topKazanma": 44, "havaTopu": 42,
+    "sutsayisi": 86, "sariKart": 3, "kirmKart": 0,
+    "transferDegeri": 130, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=FW&backgroundColor=8b5cf6"
+  },
+  {
+    "id": 18, "isim": "Martin Ødegaard", "takim": "Arsenal", "lig": "Premier Lig",
+    "pozisyon": "CAM", "yas": 25, "uyruk": "Norveç",
+    "gol": 11, "asist": 12, "mac": 30, "dakika": 2580,
+    "pasBasarisi": 90, "dribling": 78, "topKazanma": 48, "havaTopu": 44,
+    "sutsayisi": 66, "sariKart": 2, "kirmKart": 0,
+    "transferDegeri": 100, "sozlesmeBitis": 2028,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=MO&backgroundColor=8b5cf6"
+  },
+  {
+    "id": 19, "isim": "Pedri", "takim": "Barcelona", "lig": "La Liga",
+    "pozisyon": "CM", "yas": 21, "uyruk": "İspanya",
+    "gol": 8, "asist": 7, "mac": 26, "dakika": 1980,
+    "pasBasarisi": 92, "dribling": 79, "topKazanma": 58, "havaTopu": 44,
+    "sutsayisi": 44, "sariKart": 4, "kirmKart": 0,
+    "transferDegeri": 90, "sozlesmeBitis": 2026,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=PE&backgroundColor=8b5cf6"
+  },
+  {
+    "id": 20, "isim": "Rodri", "takim": "Manchester City", "lig": "Premier Lig",
+    "pozisyon": "CDM", "yas": 27, "uyruk": "İspanya",
+    "gol": 8, "asist": 9, "mac": 35, "dakika": 3060,
+    "pasBasarisi": 94, "dribling": 68, "topKazanma": 74, "havaTopu": 62,
+    "sutsayisi": 48, "sariKart": 5, "kirmKart": 0,
+    "transferDegeri": 100, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=RO&backgroundColor=6b7280"
+  },
+  {
+    "id": 21, "isim": "Granit Xhaka", "takim": "Bayer Leverkusen", "lig": "Bundesliga",
+    "pozisyon": "CDM", "yas": 31, "uyruk": "İsviçre",
+    "gol": 7, "asist": 11, "mac": 38, "dakika": 3320,
+    "pasBasarisi": 91, "dribling": 62, "topKazanma": 70, "havaTopu": 58,
+    "sutsayisi": 42, "sariKart": 6, "kirmKart": 0,
+    "transferDegeri": 25, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=GX&backgroundColor=6b7280"
+  },
+  {
+    "id": 22, "isim": "William Saliba", "takim": "Arsenal", "lig": "Premier Lig",
+    "pozisyon": "CB", "yas": 22, "uyruk": "Fransa",
+    "gol": 2, "asist": 1, "mac": 32, "dakika": 2880,
+    "pasBasarisi": 88, "dribling": 62, "topKazanma": 72, "havaTopu": 82,
+    "sutsayisi": 8, "sariKart": 3, "kirmKart": 0,
+    "transferDegeri": 80, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=WS&backgroundColor=ef4444"
+  },
+  {
+    "id": 23, "isim": "Virgil van Dijk", "takim": "Liverpool", "lig": "Premier Lig",
+    "pozisyon": "CB", "yas": 32, "uyruk": "Hollanda",
+    "gol": 3, "asist": 2, "mac": 36, "dakika": 3240,
+    "pasBasarisi": 86, "dribling": 55, "topKazanma": 78, "havaTopu": 90,
+    "sutsayisi": 12, "sariKart": 4, "kirmKart": 0,
+    "transferDegeri": 35, "sozlesmeBitis": 2025,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=VV&backgroundColor=ef4444"
+  },
+  {
+    "id": 24, "isim": "Rúben Dias", "takim": "Manchester City", "lig": "Premier Lig",
+    "pozisyon": "CB", "yas": 26, "uyruk": "Portekiz",
+    "gol": 1, "asist": 3, "mac": 30, "dakika": 2700,
+    "pasBasarisi": 89, "dribling": 58, "topKazanma": 76, "havaTopu": 86,
+    "sutsayisi": 6, "sariKart": 2, "kirmKart": 0,
+    "transferDegeri": 80, "sozlesmeBitis": 2028,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=RD&backgroundColor=ef4444"
+  },
+  {
+    "id": 25, "isim": "Alejandro Grimaldo", "takim": "Bayer Leverkusen", "lig": "Bundesliga",
+    "pozisyon": "LB", "yas": 28, "uyruk": "İspanya",
+    "gol": 8, "asist": 14, "mac": 40, "dakika": 3400,
+    "pasBasarisi": 86, "dribling": 74, "topKazanma": 52, "havaTopu": 48,
+    "sutsayisi": 56, "sariKart": 3, "kirmKart": 0,
+    "transferDegeri": 40, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=AG&backgroundColor=ef4444"
+  },
+  {
+    "id": 26, "isim": "Trent Alexander-Arnold", "takim": "Liverpool", "lig": "Premier Lig",
+    "pozisyon": "RB", "yas": 25, "uyruk": "İngiltere",
+    "gol": 4, "asist": 11, "mac": 32, "dakika": 2760,
+    "pasBasarisi": 88, "dribling": 72, "topKazanma": 48, "havaTopu": 52,
+    "sutsayisi": 42, "sariKart": 3, "kirmKart": 0,
+    "transferDegeri": 80, "sozlesmeBitis": 2025,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=TA&backgroundColor=ef4444"
+  },
+  {
+    "id": 27, "isim": "Alisson Becker", "takim": "Liverpool", "lig": "Premier Lig",
+    "pozisyon": "GK", "yas": 31, "uyruk": "Brezilya",
+    "gol": 0, "asist": 0, "mac": 32, "dakika": 2880,
+    "pasBasarisi": 78, "dribling": 30, "topKazanma": 88, "havaTopu": 82,
+    "sutsayisi": 0, "sariKart": 1, "kirmKart": 0,
+    "transferDegeri": 60, "sozlesmeBitis": 2027,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=AB&backgroundColor=0ea5e9"
+  },
+  {
+    "id": 28, "isim": "Thibaut Courtois", "takim": "Real Madrid", "lig": "La Liga",
+    "pozisyon": "GK", "yas": 31, "uyruk": "Belçika",
+    "gol": 0, "asist": 0, "mac": 22, "dakika": 1980,
+    "pasBasarisi": 76, "dribling": 28, "topKazanma": 90, "havaTopu": 80,
+    "sutsayisi": 0, "sariKart": 0, "kirmKart": 0,
+    "transferDegeri": 50, "sozlesmeBitis": 2026,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=TC&backgroundColor=0ea5e9"
+  },
+  {
+    "id": 29, "isim": "Nicolás González", "takim": "Fiorentina", "lig": "Serie A",
+    "pozisyon": "RW", "yas": 25, "uyruk": "Arjantin",
+    "gol": 13, "asist": 7, "mac": 28, "dakika": 2200,
+    "pasBasarisi": 76, "dribling": 78, "topKazanma": 32, "havaTopu": 44,
+    "sutsayisi": 62, "sariKart": 4, "kirmKart": 0,
+    "transferDegeri": 35, "sozlesmeBitis": 2026,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=NG&backgroundColor=f97316"
+  },
+  {
+    "id": 30, "isim": "Khvicha Kvaratskhelia", "takim": "PSG", "lig": "Ligue 1",
+    "pozisyon": "LW", "yas": 23, "uyruk": "Gürcistan",
+    "gol": 11, "asist": 9, "mac": 27, "dakika": 2160,
+    "pasBasarisi": 79, "dribling": 90, "topKazanma": 30, "havaTopu": 38,
+    "sutsayisi": 64, "sariKart": 2, "kirmKart": 0,
+    "transferDegeri": 80, "sozlesmeBitis": 2029,
+    "resim": "https://api.dicebear.com/7.x/initials/svg?seed=KK&backgroundColor=3b82f6"
+  }
+]

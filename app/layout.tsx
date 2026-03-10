@@ -1,0 +1,30 @@
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'Futbol Skout — Oyuncu Analiz & Alternatif Platformu',
+  description: 'Oyuncuları karşılaştır, pozisyona göre en uygun alternatifleri keşfet.',
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="tr">
+      <body className={inter.className}>
+        <nav className="bg-green-900 text-white px-6 py-4 flex items-center gap-3 shadow-lg">
+          <span className="text-2xl">⚽</span>
+          <span className="font-bold text-xl tracking-tight">Futbol Skout</span>
+          <span className="ml-2 text-green-400 text-sm font-medium">Beta</span>
+        </nav>
+        <main className="max-w-6xl mx-auto px-4 py-8">
+          {children}
+        </main>
+        <footer className="text-center text-gray-400 text-sm py-8 mt-16">
+          Futbol Skout — Hobi Projesi · Veriler 2024/25 sezonuna aittir
+        </footer>
+      </body>
+    </html>
+  )
+}
