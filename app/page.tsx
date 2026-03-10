@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { tumOyuncular, POZISYONLAR, POZISYON_ETIKETI, alternatifBul, radarVerisi, type Player } from '../lib/oneri-motoru'
 import OyuncuKarti from '../components/OyuncuKarti'
 import RadarGrafik from '../components/RadarGrafik'
@@ -10,6 +10,19 @@ export default function Home() {
   const [seciliOyuncu, setSeciliOyuncu] = useState<Player | null>(null)
   const [alternatifler, setAlternatifler] = useState<Player[]>([])
   const [karsilastirilan, setKarsilastirilan] = useState<Player | null>(null)
+  const [aramaMetni, setAramaMetni] = useState<string>('')
+
+  const aramaOyunculari = useMemo(() => {
+    if (aramaMetni.length < 2) return []
+    const kucuk = aramaMetni.toLowerCase()
+    return tumOyuncular
+      .filter(p =>
+        p.isim.toLowerCase().includes(kucuk) ||
+        p.takim.toLowerCase().includes(kucuk) ||
+        p.uyruk.toLowerCase().includes(kucuk)
+      )
+      .slice(0, 8)
+  }, [aramaMetni])
 
   const pozisyondakiOyuncular = seciliPozisyon
     ? tumOyuncular.filter(p => p.pozisyon === seciliPozisyon)
@@ -19,19 +32,8 @@ export default function Home() {
     setSeciliOyuncu(oyuncu)
     setAlternatifler(alternatifBul(oyuncu.id))
     setKarsilastirilan(null)
-  }
-
-  const pozRenk: Record<string, string> = {
-    ST: 'bg-green-100 border-green-400 text-green-800',
-    LW: 'bg-blue-100 border-blue-400 text-blue-800',
-    RW: 'bg-orange-100 border-orange-400 text-orange-800',
-    CAM: 'bg-purple-100 border-purple-400 text-purple-800',
-    CM: 'bg-purple-100 border-purple-400 text-purple-800',
-    CDM: 'bg-gray-100 border-gray-400 text-gray-800',
-    LB: 'bg-red-100 border-red-400 text-red-800',
-    RB: 'bg-red-100 border-red-400 text-red-800',
-    CB: 'bg-red-100 border-red-400 text-red-800',
-    GK: 'bg-sky-100 border-sky-400 text-sky-800',
+    setAramaMetni('')
+    setSeciliPozisyon(oyuncu.pozisyon)
   }
 
   return (
@@ -46,10 +48,59 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Adım 1: Pozisyon Seç */}
+      {/* Arama Çubuğu */}
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-          1 — Pozisyon Seç
+          🔍 Oyuncu Ara
+        </h2>
+        <div className="relative">
+          <input
+            type="text"
+            value={aramaMetni}
+            onChange={e => setAramaMetni(e.target.value)}
+            placeholder="Oyuncu adı, takım veya ülke yaz... (ör: Haaland, Arsenal, Brezilya)"
+            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:outline-none text-gray-800 text-sm"
+          />
+          {aramaMetni && (
+            <button
+              onClick={() => setAramaMetni('')}
+              className="absolute right-3 top-3 text-gray-400 hover:text-gray-600 text-lg"
+            >
+              ✕
+            </button>
+          )}
+          {aramaOyunculari.length > 0 && (
+            <div className="absolute z-10 w-full mt-2 bg-white rounded-xl border border-gray-100 shadow-lg overflow-hidden">
+              {aramaOyunculari.map(oyuncu => (
+                <button
+                  key={oyuncu.id}
+                  onClick={() => oyuncuSec(oyuncu)}
+                  className="w-full flex items-center gap-3 px-4 py-3 hover:bg-green-50 transition-colors text-left border-b border-gray-50 last:border-0"
+                >
+                  <img src={oyuncu.resim} alt={oyuncu.isim} className="w-9 h-9 rounded-full" />
+                  <div className="flex-1 min-w-0">
+                    <div className="font-semibold text-sm text-gray-800">{oyuncu.isim}</div>
+                    <div className="text-xs text-gray-400">{oyuncu.takim} · {oyuncu.lig}</div>
+                  </div>
+                  <span className="text-xs font-bold px-2 py-1 bg-gray-100 text-gray-600 rounded-lg">
+                    {oyuncu.pozisyon}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+          {aramaMetni.length >= 2 && aramaOyunculari.length === 0 && (
+            <div className="absolute z-10 w-full mt-2 bg-white rounded-xl border border-gray-100 shadow-lg px-4 py-3 text-sm text-gray-400">
+              Sonuç bulunamadı.
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Pozisyon Seç */}
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
+          1 — Pozisyona Göre Tara
         </h2>
         <div className="flex flex-wrap gap-2">
           {POZISYONLAR.map(poz => (
@@ -68,14 +119,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Adım 2: Oyuncu Seç */}
+      {/* Oyuncu Listesi */}
       {seciliPozisyon && pozisyondakiOyuncular.length > 0 && (
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
           <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
             2 — {POZISYON_ETIKETI[seciliPozisyon]} Oyuncusu Seç ({pozisyondakiOyuncular.length} oyuncu)
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {pozisyondakiOyuncular.map(oyuncu => (
+            {pozisyondakiOyuncular.slice(0, 30).map(oyuncu => (
               <button
                 key={oyuncu.id}
                 onClick={() => oyuncuSec(oyuncu)}
@@ -92,17 +143,16 @@ export default function Home() {
                 </div>
               </button>
             ))}
+            {pozisyondakiOyuncular.length > 30 && (
+              <div className="flex items-center justify-center p-3 rounded-xl border-2 border-dashed border-gray-200 text-sm text-gray-400">
+                +{pozisyondakiOyuncular.length - 30} daha · Aramayı kullan
+              </div>
+            )}
           </div>
         </div>
       )}
 
-      {seciliPozisyon && pozisyondakiOyuncular.length === 0 && (
-        <div className="bg-yellow-50 rounded-xl p-4 text-yellow-700 text-sm">
-          Bu pozisyonda henüz veri yok. Yakında ekleniyor.
-        </div>
-      )}
-
-      {/* Seçili Oyuncu Detayı + Alternatifler */}
+      {/* Seçili Oyuncu */}
       {seciliOyuncu && (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -122,7 +172,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Alternatifler */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">
               4 — Benzer Profilli Alternatifler
@@ -143,7 +192,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Karşılaştırma */}
           {karsilastirilan && (
             <div className="mt-6 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
               <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
@@ -180,7 +228,6 @@ export default function Home() {
                       { label: 'Pas %', a: seciliOyuncu.pasBasarisi, b: karsilastirilan.pasBasarisi },
                       { label: 'Dribling', a: seciliOyuncu.dribling, b: karsilastirilan.dribling },
                       { label: 'Yaş', a: seciliOyuncu.yas, b: karsilastirilan.yas },
-                      { label: 'Değer (M€)', a: seciliOyuncu.transferDegeri, b: karsilastirilan.transferDegeri },
                     ].map(({ label, a, b }) => (
                       <tr key={label} className="border-b border-gray-50">
                         <td className="py-2 text-gray-600">{label}</td>

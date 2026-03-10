@@ -21,8 +21,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="max-w-6xl mx-auto px-4 py-8">
           {children}
         </main>
-        <footer className="text-center text-gray-400 text-sm py-8 mt-16">
-          Futbol Skout — Hobi Projesi · Veriler 2024/25 sezonuna aittir
+        <footer className="border-t border-gray-100 mt-16 py-8">
+          <div className="max-w-6xl mx-auto px-4 text-center space-y-2">
+            <div className="text-gray-700 font-semibold">⚽ Futbol Skout</div>
+            <div className="text-gray-400 text-sm">
+              Veriler <span className="font-medium text-gray-600">2023/24 sezonu</span>na aittir · Her hafta Pazartesi güncellenir
+            </div>
+            <div className="text-gray-400 text-xs">
+              Kaynak: FBref · Kaggle · Top 5 Lig (Premier Lig, La Liga, Bundesliga, Serie A, Ligue 1)
+            </div>
+            <div className="text-gray-300 text-xs">Hobi projesi · Ticari amaç taşımaz</div>
+          </div>
         </footer>
       </body>
     </html>
