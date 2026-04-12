@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="max-w-6xl mx-auto px-4 text-center space-y-2">
             <div className="text-gray-700 font-semibold">⚽ Futbol Skout</div>
             <div className="text-gray-400 text-sm">
-              Veriler <span className="font-medium text-gray-600">2023/24 sezonu</span>na aittir · Her hafta Pazartesi güncellenir
+              Veriler <span className="font-medium text-gray-600">2024/25 sezonu</span>na aittir · Her hafta Pazartesi güncellenir
             </div>
             <div className="text-gray-400 text-xs">
               Kaynak: FBref · Kaggle · Top 5 Lig (Premier Lig, La Liga, Bundesliga, Serie A, Ligue 1)
